@@ -6,16 +6,16 @@ import java.util.HashMap;
  *
  * @author Goretti
  */
-public class Histogram {
+public class Histogram <T> {
     
-    private final int [] v;
+    private final T[] v;
     
-    Histogram(int[] v) {
+    public Histogram(T[] v) {
         this.v=v;
     }
     
-    public HashMap<Integer,Integer> getHisto(){
-        HashMap<Integer,Integer> histogram = new HashMap<>();
+    public HashMap<T,Integer> getHisto(){
+        HashMap<T,Integer> histogram = new HashMap<>();
         
         for (int i = 0; i < v.length; i++) {
              if(histogram.containsKey(v[i])){

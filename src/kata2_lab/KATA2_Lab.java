@@ -9,13 +9,15 @@ import java.util.HashMap;
 public class KATA2_Lab {
 
    public static void main(String[] args) {
-       int [] v = {1,1,1,5,3,4,8,9,100,9};
+       //int [] v = {1,1,1,5,3,4,8,9,100,9};
+       Integer [] v = {1,1,1,5,3,4,8,9,100,9};
+       String [] nombres = {"Ana","Juan","Ana","Pedro","Pedro","Pedro", "Dani guapo"};
        
-       Histogram histo = new Histogram(v);
+       Histogram histo = new Histogram(nombres);
        
-       HashMap <Integer,Integer> histogram = histo.getHisto();
+       HashMap <Object,Integer> histogram = histo.getHisto();
        
-       for (int key : histogram.keySet()) {
+       for (Object key : histogram.keySet()) {
            System.out.println(key + " : " + histogram.get(key));
        }
    }
