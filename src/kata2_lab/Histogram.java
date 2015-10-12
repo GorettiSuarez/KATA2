@@ -1,6 +1,8 @@
 package kata2_lab;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -8,24 +10,19 @@ import java.util.HashMap;
  */
 public class Histogram <T> {
     
-    private final T[] v;
-    
-    public Histogram(T[] v) {
-        this.v=v;
+    private final Map <T,Integer> map = new HashMap<>();
+
+    public Integer get(Object key) {
+        return map.get(key);
+    }
+
+    public Set<T> keySet() {
+        return map.keySet();
     }
     
-    public HashMap<T,Integer> getHisto(){
-        HashMap<T,Integer> histogram = new HashMap<>();
-        
-        for (int i = 0; i < v.length; i++) {
-             if(histogram.containsKey(v[i])){
-                histogram.put(v[i], histogram.get(v[i])+1);                        
-            } else {
-                histogram.put(v[i],1);
-            }
-        }
-        
-        return histogram;
+    
+    public Integer incrementa (T key){
+        return map.put(key, map.containsKey(key)? map.get(key)+1 : 1);
     }
     
 }
